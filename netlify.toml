@@ -1,6 +1,6 @@
 [build]
-  publish = "build" # 指定构建后文件的目录
-  command = "pnpm run docs:build" # 使用正确的构建命令
+  publish = "docs/.vuepress/dist"
+  command = "pnpm run docs:build"
 
 [dev]
   framework = "#auto" # 自动检测框架
