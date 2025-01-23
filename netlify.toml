@@ -1,5 +1,5 @@
 [build]
-  publish = ".vuepress/dist"
+  publish = "src/.vuepress/dist"
   command = "pnpm run docs:build"
 
 [dev]
