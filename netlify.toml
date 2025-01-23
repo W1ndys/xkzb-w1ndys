@@ -1,9 +1,9 @@
 [build]
-  publish = "docs/.vuepress/dist"
+  publish = ".vuepress/dist"
   command = "pnpm run docs:build"
 
 [dev]
-  framework = "#auto" # 自动检测框架
+  framework = "#auto" 
 
 [[redirects]]
   from = "/*"
