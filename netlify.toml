@@ -1,6 +1,6 @@
 [build]
   publish = "build" # 指定构建后文件的目录
-  command = "pnpm run build" # 使用 pnpm 进行构建
+  command = "pnpm run docs:build" # 使用正确的构建命令
 
 [dev]
   framework = "#auto" # 自动检测框架
