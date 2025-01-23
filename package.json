@@ -1,6 +1,6 @@
 {
-  "name": "v2.easy-qfnu",
-  "description": "Easy-QFNU",
+  "name": "easy-qfnu",
+  "description": "「Easy-QFNU官方文档」让你的QFNU更简单~",
   "version": "2.0.0",
   "license": "MIT",
   "type": "module",
