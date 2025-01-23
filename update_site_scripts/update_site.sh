@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # 设置工作目录
-WORK_DIR="/tmp/v2easy-temp"
-TARGET_DIR="/opt/1panel/apps/openresty/openresty/www/sites/v2easy-qfnu.top/index"
-REPO_URL="https://github.com/W1ndys/v2.Easy-QFNU.git"
-PROXY_URL="https://ghfast.top/https://github.com/W1ndys/v2.Easy-QFNU.git"
+WORK_DIR="/tmp/easy-temp"
+TARGET_DIR="/opt/1panel/apps/openresty/openresty/www/sites/easy-qfnu.top/index"
+REPO_URL="https://github.com/W1ndys/Easy-QFNU.git"
+PROXY_URL="https://ghfast.top/https://github.com/W1ndys/Easy-QFNU.git"
 TIMEOUT=10  # 设置超时时间（秒）
 
 # 获取脚本所在目录
