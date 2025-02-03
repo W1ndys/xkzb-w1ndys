@@ -1,0 +1,26 @@
+{
+  "name": "easy-qfnu",
+  "description": "「Easy-QFNU官方文档」让你的QFNU更简单~",
+  "version": "2.0.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "docs:build": "vuepress-vite build src",
+    "docs:clean-dev": "vuepress-vite dev src --clean-cache",
+    "docs:dev": "vuepress-vite dev src",
+    "docs:update-package": "pnpm dlx vp-update"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "2.0.0-rc.19",
+    "@vuepress/plugin-copyright": "2.0.0-rc.73",
+    "@vuepress/plugin-slimsearch": "2.0.0-rc.71",
+    "@vuepress/plugin-watermark": "2.0.0-rc.71",
+    "@waline/client": "^3.5.1",
+    "mathjax-full": "^3.2.2",
+    "sass-embedded": "^1.83.4",
+    "vue": "^3.5.13",
+    "vuepress": "2.0.0-rc.19",
+    "vuepress-theme-hope": "2.0.0-rc.70"
+  },
+  "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a"
+}

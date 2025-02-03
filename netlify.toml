@@ -1,0 +1,11 @@
+[build]
+  publish = "src/.vuepress/dist"
+  command = "pnpm run docs:build"
+
+[dev]
+  framework = "#auto" 
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

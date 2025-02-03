@@ -1,0 +1,58 @@
+name: Deploy Pages
+
+on:
+  push:
+    branches: [ main ] # 或者你的默认分支名
+    paths:
+      - 'src/**'  # 只有当 src 目录下的文件发生变化时才触发
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 添加写入权限
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 获取完整的 git 历史
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          
+      - name: Install Dependencies
+        run: |
+          pnpm config set registry https://registry.npmmirror.com/
+          pnpm install
+        
+      - name: Build
+        run: |
+          pnpm run docs:build
+          ls -la # 检查构建输出目录
+        
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: src/.vuepress/dist  # 修改为正确的构建输出目录
+          branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 提供的 token
+          clean: true
+          force: true
+
+      - name: SSH to Server and Run Script
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: |
+            cd /home/W1ndys/Easy-QFNU_scripts/update_site_scripts
+            chmod +x update_site.sh
+            ./update_site.sh
